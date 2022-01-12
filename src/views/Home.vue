@@ -2,7 +2,11 @@
   <div v-if="isLoading">ça charge</div>
   <div v-else>
     <!--AVEC TITRE ET TH -->
-    <page-title titre="Accueil" @is-square="onIsSquare"></page-title>
+    <page-title
+      titre="Accueil"
+      @is-square="onIsSquare"
+      :cardStyleSquare="cardStyleSquare"
+    ></page-title>
     <div class="trending">
       <div>
         <Slider

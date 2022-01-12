@@ -34,7 +34,7 @@ export default {
 }
 .card-container {
   display: flex;
-
   flex-wrap: wrap;
+  margin-bottom: 1em;
 }
 </style>

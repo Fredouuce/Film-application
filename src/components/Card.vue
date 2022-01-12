@@ -13,11 +13,12 @@
           </p>
           <p class="note-info">Note: {{ media.vote_average }}/10</p>
           <p class="synopsis-info">
-            Synopsis: {{ media.overview.substring(0, 200) }}...
+            Synopsis:
+            {{ media.overview.substring(0, 200) + "..." }}
             <router-link
               :to="type == 'movie' ? `/film/${media.id}` : `/tv/${media.id}`"
             >
-              <span class="more">En savoir plus</span>
+              <span class="more"> En savoir plus</span>
             </router-link>
           </p>
         </div>
@@ -38,12 +39,41 @@ export default {
 </script>
 
 <style lang="scss">
+.list {
+  display: flex;
+  flex-direction: row-reverse;
+  max-height: 280px;
+  overflow: hidden;
+  width: 600px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  z-index: 2;
+  margin-right: 1em;
+  background: #121212;
+  transition: 200ms ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
+  .more {
+    color: #4b3dce;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .info {
+    padding: 1em 1em;
+  }
+  img {
+    width: 186px;
+    height: 280px;
+    object-fit: cover;
+  }
+}
 a:hover {
   color: white;
 }
 .card {
   margin-top: 1.5em;
-  transition: 600ms ease;
 }
 .square {
   border-radius: 5px;
@@ -51,7 +81,7 @@ a:hover {
   position: relative;
   margin-right: 1em;
   margin-bottom: 1em;
-
+  transition: 300ms ease;
   .info {
     position: absolute;
     z-index: 1;
@@ -60,7 +90,7 @@ a:hover {
     width: 100%;
     background: rgba(34, 34, 34, 0.842);
     padding: 0.5em;
-    transition: 500ms ease-in-out;
+    transition: 300ms ease-in-out;
     .media-title {
       font-size: 1.5em;
       font-weight: 700;
