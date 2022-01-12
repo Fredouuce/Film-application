@@ -6,7 +6,7 @@
     </div>
     <div class="card-container">
       <div v-for="media in medias" :key="media.id">
-        <Card :type="type" :media="media" />
+        <Card :type="type" :media="media" :styleSquare="styleSquare" />
       </div>
     </div>
   </div>
@@ -15,7 +15,7 @@
 <script>
 import Card from "../Card.vue";
 export default {
-  props: ["sliderTitle", "type", "medias", "loading"],
+  props: ["sliderTitle", "type", "medias", "loading", "styleSquare"],
   name: "Slider",
   components: {
     Card,

@@ -2,8 +2,12 @@
   <div class="pageInfo">
     <h1>{{ titre }}</h1>
     <div class="th">
-      <button><i class="fas fa-th-large"></i></button>
-      <button><i class="fas fa-th-list"></i></button>
+      <button @click="styleSquare(true)">
+        <i class="fas fa-th-large"></i>
+      </button>
+      <button @click="styleSquare(false)">
+        <i class="fas fa-th-list"></i>
+      </button>
     </div>
   </div>
 </template>
@@ -12,6 +16,12 @@
 export default {
   name: "PageTitle",
   props: ["titre"],
+  emits: ["is-square"],
+  methods: {
+    styleSquare(bool) {
+      this.$emit("is-square", bool);
+    },
+  },
 };
 </script>
 

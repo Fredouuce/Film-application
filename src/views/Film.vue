@@ -1,5 +1,6 @@
 <template>
   <page-title titre="Nos films" />
+  <div></div>
 </template>
 
 <script>

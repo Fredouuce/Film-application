@@ -51,13 +51,13 @@ html {
 }
 .aside-middle {
   padding: 2em 1em;
-  width: 74%;
+  width: 77%;
   height: 100vh;
   overflow: scroll;
 }
 .aside-right {
   height: 100vh;
-  width: 13%;
+  width: 10%;
   background: #121212;
 }
 </style>
