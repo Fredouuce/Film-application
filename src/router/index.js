@@ -3,6 +3,8 @@ import Home from "../views/Home.vue";
 import Film from "../views/Film.vue";
 import NotFound from "../components/NotFound/NotFound.vue";
 import Tv from "../views/Tv.vue";
+
+import FilmPage from "../components/Film/FilmPage.vue";
 const routes = [
   {
     path: "/",
@@ -14,6 +16,12 @@ const routes = [
     path: "/film",
     name: "Film",
     component: Film,
+    props: true,
+  },
+  {
+    path: "/film/:filmId",
+    name: "FilmPage",
+    component: FilmPage,
     props: true,
   },
   {

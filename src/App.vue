@@ -88,4 +88,13 @@ html {
   border-radius: 50px;
   overflow: hidden;
 }
+.card-enter-active,
+.card-leave-active {
+  transition: all 1s ease;
+}
+.card-enter-from,
+.card-leave-to {
+  opacity: 0;
+  transform: translateY(-30px);
+}
 </style>

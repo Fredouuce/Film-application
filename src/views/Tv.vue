@@ -13,7 +13,7 @@
     </transition-group>
   </div>
   <div class="showmore-btn-container">
-    <button @click="moreTvs" class="showmore-btn">Voir plus de sériesdd</button>
+    <button @click="moreTvs" class="showmore-btn">Voir plus de séries</button>
   </div>
 </template>
 
@@ -71,5 +71,14 @@ export default {
 .tv-cpm {
   display: flex;
   flex-wrap: wrap;
+}
+.card-enter-active,
+.card-leave-active {
+  transition: all 1s ease;
+}
+.card-enter-from,
+.card-leave-to {
+  opacity: 0;
+  transform: translateY(-30px);
 }
 </style>

@@ -8,10 +8,13 @@
 
         <div class="movie-info">
           <p class="date-info">
-            Date:
-            {{ type == "movie" ? media.release_date : media.first_air_date }}
+            {{
+              type == "movie"
+                ? media.release_date.slice(0, 4)
+                : media.first_air_date.slice(0, 4)
+            }}
           </p>
-          <p class="note-info">Note: {{ media.vote_average }}/10</p>
+          <p class="note-info">Recommandé à {{ note }}%</p>
           <p class="synopsis-info">
             Synopsis:
             {{ media.overview.substring(0, 200) + "..." }}
@@ -35,10 +38,22 @@
 export default {
   name: "Card",
   props: ["type", "media", "styleSquare"],
+  data() {
+    return {
+      note: null,
+    };
+  },
+  mounted() {
+    this.note = Math.floor((this.media.vote_average / 10) * 100);
+    console.log(this.note);
+  },
 };
 </script>
 
 <style lang="scss">
+.note-info {
+  color: #46d369;
+}
 .list {
   display: flex;
   flex-direction: row-reverse;

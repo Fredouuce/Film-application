@@ -75,14 +75,4 @@ export default {
   display: flex;
   flex-wrap: wrap;
 }
-
-.card-enter-active,
-.card-leave-active {
-  transition: all 1s ease;
-}
-.card-enter-from,
-.card-leave-to {
-  opacity: 0;
-  transform: translateY(-30px);
-}
 </style>
