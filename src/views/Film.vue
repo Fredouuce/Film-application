@@ -5,10 +5,13 @@
     :cardStyleSquare="cardStyleSquare"
   />
   <div class="film-cpm">
-    <div v-for="movie in movies" :key="movie.id">
-      <Card :media="movie" type="movie" :styleSquare="cardStyleSquare" />
-    </div>
+    <transition-group name="card">
+      <div v-for="movie in movies" :key="movie.id">
+        <Card :media="movie" type="movie" :styleSquare="cardStyleSquare" />
+      </div>
+    </transition-group>
   </div>
+
   <div class="showmore-btn-container">
     <button @click="moreMovies" class="showmore-btn">Voir plus de film</button>
   </div>
@@ -67,9 +70,19 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .film-cpm {
   display: flex;
   flex-wrap: wrap;
+}
+
+.card-enter-active,
+.card-leave-active {
+  transition: all 1s ease;
+}
+.card-enter-from,
+.card-leave-to {
+  opacity: 0;
+  transform: translateY(-30px);
 }
 </style>

@@ -6,12 +6,14 @@
   />
 
   <div class="tv-cpm">
-    <div v-for="tv in tvs" :key="tv.id">
-      <Card :media="tv" type="tv" :styleSquare="cardStyleSquare" />
-    </div>
+    <transition-group name="card">
+      <div v-for="tv in tvs" :key="tv.id">
+        <Card :media="tv" type="tv" :styleSquare="cardStyleSquare" />
+      </div>
+    </transition-group>
   </div>
   <div class="showmore-btn-container">
-    <button @click="moreTvs" class="showmore-btn">Voir plus de séries</button>
+    <button @click="moreTvs" class="showmore-btn">Voir plus de sériesdd</button>
   </div>
 </template>
 
