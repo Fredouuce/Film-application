@@ -60,4 +60,32 @@ html {
   width: 10%;
   background: #121212;
 }
+
+.showmore-btn-container {
+  width: 250px;
+
+  position: relative;
+  left: 50%;
+  height: 50px;
+  bottom: 0;
+  transform: translateX(-50%);
+  align-items: center;
+  .showmore-btn {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #4b3dce;
+    cursor: pointer;
+    color: white;
+    font-size: 1.3em;
+    text-align: center;
+    transition: 300ms ease;
+    &:hover {
+      background: #3022b4;
+    }
+  }
+
+  border-radius: 50px;
+  overflow: hidden;
+}
 </style>

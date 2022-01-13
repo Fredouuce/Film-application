@@ -45,6 +45,7 @@
           :styleSquare="cardStyleSquare"
         />
       </div>
+      <button @click="increment">Click pour incrementer</button>
     </div>
   </div>
 </template>
@@ -53,6 +54,7 @@
 import axios from "axios";
 import PageTitle from "@/components/PageTitle.vue";
 import Slider from "../components/Home/Slider.vue";
+
 export default {
   name: "Home",
   components: { PageTitle, Slider },
@@ -65,11 +67,17 @@ export default {
       topRatedMovie: [],
       topRatedTv: [],
       cardStyleSquare: true,
+      page: 1,
     };
   },
   methods: {
     onIsSquare(bool) {
       this.cardStyleSquare = bool;
+    },
+
+    increment() {
+      this.page += 1;
+      console.log(this.page);
     },
   },
   mounted() {

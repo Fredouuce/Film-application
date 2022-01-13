@@ -2,7 +2,7 @@
   <div class="slider-container">
     <div class="slider-info">
       <h1 class="slider-title">{{ sliderTitle }}</h1>
-      <router-link to="film/trending">Voir plus</router-link>
+      <router-link to="/film">Voir plus</router-link>
     </div>
     <div class="card-container">
       <div v-for="media in medias" :key="media.id">

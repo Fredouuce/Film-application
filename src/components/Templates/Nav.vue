@@ -5,9 +5,7 @@
       <div class="first-row column">
         <router-link to="/"><i class="fas fa-home"></i>Accueil</router-link>
         <router-link to="/film"><i class="fas fa-video"></i> Film</router-link>
-        <router-link to="/series">
-          <i class="fas fa-tv"></i> Séries</router-link
-        >
+        <router-link to="/tv"> <i class="fas fa-tv"></i> Séries</router-link>
         <router-link to="/naviguer"
           ><i class="fas fa-search"></i>Naviguer</router-link
         >
