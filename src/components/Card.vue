@@ -45,7 +45,6 @@ export default {
   },
   mounted() {
     this.note = Math.floor((this.media.vote_average / 10) * 100);
-    console.log(this.note);
   },
 };
 </script>

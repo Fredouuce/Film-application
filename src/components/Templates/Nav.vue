@@ -4,8 +4,12 @@
     <div class="nav-link">
       <div class="first-row column">
         <router-link to="/"><i class="fas fa-home"></i>Accueil</router-link>
-        <router-link to="/film"><i class="fas fa-video"></i> Film</router-link>
-        <router-link to="/tv"> <i class="fas fa-tv"></i> Séries</router-link>
+        <router-link to="/film" :class="activeLink('film')"
+          ><i class="fas fa-video"></i> Film</router-link
+        >
+        <router-link to="/tv" :class="activeLink('tv')">
+          <i class="fas fa-tv"></i> Séries</router-link
+        >
         <router-link to="/naviguer"
           ><i class="fas fa-search"></i>Naviguer</router-link
         >
@@ -33,9 +37,13 @@ export default {
       searchActive: false,
     };
   },
-  methods: {},
-
-  mounted() {},
+  methods: {
+    activeLink(lien) {
+      if (this.$route.fullPath.includes(lien)) {
+        return "router-link-active";
+      }
+    },
+  },
 };
 </script>
 

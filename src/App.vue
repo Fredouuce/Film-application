@@ -6,7 +6,13 @@
     <router-view />
   </div>
 
-  <div class="aside-right"></div>
+  <div class="aside-right">
+    <div class="login">
+      <h1>Vous n'êtes pas connectez</h1>
+      <router-link to="/login">Se connectez</router-link>
+      <router-link to="/signup">S'inscrire</router-link>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -50,7 +56,6 @@ html {
   display: flex;
 }
 .aside-middle {
-  padding: 2em 1em;
   width: 77%;
   height: 100vh;
   overflow: scroll;
